@@ -8,7 +8,7 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-isbn = { path = "../isbn-rs" }
+isbn = "0.7"
 serde = { version = "1.0", features = ["derive"] }
 serde-wasm-bindgen = "0.6"
 
