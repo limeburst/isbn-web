@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISBN Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>ISBN Validator</h1>
+        <p class="subtitle">Powered by <a href="https://github.com/limeburst/isbn-rs">isbn-rs</a> compiled to WebAssembly</p>
+
+        <div class="input-section">
+            <input
+                type="text"
+                id="isbn-input"
+                placeholder="Enter an ISBN (e.g., 978-1-4920-6766-5)"
+                autocomplete="off"
+            >
+            <div class="samples">
+                <span>Try:</span>
+                <button class="sample" data-isbn="978-1-4920-6766-5">978-1-4920-6766-5</button>
+                <button class="sample" data-isbn="89-6626-126-4">89-6626-126-4</button>
+                <button class="sample" data-isbn="0-306-40615-2">0-306-40615-2</button>
+                <button class="sample" data-isbn="978-3-16-148410-0">978-3-16-148410-0</button>
+                <button class="sample" data-isbn="0-9752298-0-X">0-9752298-0-X</button>
+            </div>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div class="result-row">
+                <span class="label">Status</span>
+                <span id="status" class="value"></span>
+            </div>
+            <div class="result-row">
+                <span class="label">Type</span>
+                <span id="type" class="value"></span>
+            </div>
+            <div class="result-row">
+                <span class="label">Hyphenated</span>
+                <span id="hyphenated" class="value"></span>
+            </div>
+            <div class="result-row">
+                <span class="label">Registration Group</span>
+                <span id="group" class="value"></span>
+            </div>
+            <div class="result-row">
+                <span class="label">ISBN-10</span>
+                <span id="isbn10" class="value"></span>
+            </div>
+            <div class="result-row">
+                <span class="label">ISBN-13</span>
+                <span id="isbn13" class="value"></span>
+            </div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </main>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
